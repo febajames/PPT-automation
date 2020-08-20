@@ -7,7 +7,7 @@ from q2.pptformatter.PPTFormatter import slide1, slide2, slide3, slide4_pie, for
 
 
 if __name__ == '__main__':
-    print("Staring 2c...")
+    print("Starting..")
     prs = Presentation(os.path.join(os.path.abspath(os.path.dirname(__file__)), "../data/template.pptx"))
 
     slide1(prs)
@@ -75,5 +75,6 @@ if __name__ == '__main__':
     data_el = data_el.loc[:, ['Type', 'MeasureValue']].copy().sort_values('MeasureValue', ascending=False)
     slide4 = slide4_pie(prs, data_el)
     print("Done slide 4...")
+    
     prs.save("output_chart.pptx")  # saving file
     print("Saved PPT...")
